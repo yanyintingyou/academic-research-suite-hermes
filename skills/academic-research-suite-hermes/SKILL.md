@@ -411,5 +411,5 @@ Set environment preference `ARS_CROSS_MODEL=1` to enable:
 - [ ] `name` ≤ 64 chars, lowercase + hyphens
 - [ ] `related_skills` references are valid in-repo or user-local skills
 - [ ] Structure: `# Title` → `## Overview` → `## When to Use` → body → `## Common Pitfalls` → `## Verification Checklist`
-- [ ] File is at `skills/research/academic-research-suite/SKILL.md` (in-repo) or `~/.hermes/skills/academic-research-suite/SKILL.md` (user-local)
+- [ ] File is at `skills/research/academic-research-suite-hermes/SKILL.md` (in-repo) or `~/.hermes/skills/academic-research-suite-hermes/SKILL.md` (user-local)
 - [ ] `git add` + `git commit` completed if in-repo
