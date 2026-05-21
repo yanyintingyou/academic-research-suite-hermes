@@ -1,2 +1,6 @@
 # academic-research-suite-hermes
-Imbad0202/academic-research-skills available for NousResearch/hermes-agent.
+A Hermes Agent skill suite for academic research, paper writing, and peer review simulation.
+
+From Imbad0202/academic-research-skills.
+Revised by yanyintingyou.
+Suite for NousResearch/hermes-agent.
