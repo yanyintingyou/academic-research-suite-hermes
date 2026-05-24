@@ -1,142 +1,161 @@
-# academic-research-suite-hermes
+# Academic Research Suite Hermes / 学术研究 Agent Skill 套件
 
-**A comprehensive suite of Hermes Agent skills for academic research, literature review, paper writing, and peer review simulation.**
-
-> **Adapted from [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills) for Hermes Agent.**
-
-This repository ports and adapts the powerful academic research skill collection originally developed by **Imbad0202** into a format that is fully optimized and natively compatible with the **Hermes Agent** multi-model AI agent system.
+[English](#english) | [中文](#中文)
 
 ---
 
-## Overview
+## English
 
-`academic-research-suite-hermes` provides specialized, production-ready skills that support the entire academic research workflow inside Hermes Agent. Whether you are conducting literature reviews, drafting papers, simulating peer review, or managing research projects, these skills bring structured, high-quality assistance directly into your agent environment.
+A portable academic research skill for Hermes Agent, Claude Code, Codex/OpenAI agents, Cursor, and other agent frameworks. It helps with literature review, research planning, paper drafting, peer-review simulation, revision coaching, and citation/integrity audits.
 
-### Key Capabilities
+> Adapted from the ideas of [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills), repackaged into a conventional single-skill repository structure.
 
-- **Literature Review & Synthesis**: Intelligent search, summarization, gap analysis, and thematic organization of academic papers.
-- **Research Planning & Outlining**: Structured paper planning, hypothesis generation, and methodology design.
-- **Academic Writing Support**: Drafting sections with proper academic tone, argumentation, and citation integration.
-- **Peer Review Simulation**: Generating constructive, critical feedback as if from real reviewers (with different personas).
-- **Citation & Reference Management**: Assisting with citation formatting, consistency checking, and reference list generation.
-- **Research Methodology Guidance**: Help with experimental design, statistical approaches, and academic rigor.
+### What changed in this version
 
-These skills are designed to work seamlessly with other Hermes skills (such as document conversion, web search, and data analysis tools).
+- Added a canonical root `SKILL.md` for generic agent frameworks.
+- Added Hermes-compatible path: `skills/research/academic-research-suite-hermes/SKILL.md`.
+- Added compatibility files for Codex/OpenAI agents, Claude Code, and Cursor:
+  - `AGENTS.md`
+  - `CLAUDE.md`
+  - `.cursorrules`
+  - `.cursor/rules/academic-research-suite.mdc`
+- Simplified the previous over-promising structure: the repository now ships one reliable, portable skill instead of referencing missing sub-skill folders.
+- Tightened citation-integrity rules to prevent fabricated references and unsupported claims.
 
----
+### Repository structure
 
-## Why Adapt for Hermes Agent?
+```text
+academic-research-suite-hermes/
+├── SKILL.md                                      # Canonical cross-agent skill
+├── README.md
+├── LICENSE
+├── AGENTS.md                                    # Codex / OpenAI agent instructions
+├── CLAUDE.md                                    # Claude Code instructions
+├── .cursorrules                                 # Legacy Cursor rules
+├── .cursor/rules/academic-research-suite.mdc    # Cursor rule file
+└── skills/
+    └── research/
+        └── academic-research-suite-hermes/
+            └── SKILL.md                         # Hermes-compatible copy
+```
 
-The original `academic-research-skills` by Imbad0202 is an outstanding open-source contribution. However, to fully leverage it inside a modern agent framework like **Hermes**, several adaptations were necessary:
+### Installation
 
-- Proper `SKILL.md` metadata and registration system for automatic discovery
-- Consistent directory layout under `skills/<skill-name>/`
-- Optimized prompts and tool-calling patterns compatible with Hermes' multi-model routing and fallback mechanisms
-- Better integration points with complementary skills (e.g., `markitdown-auto-converter-agent-skill`, PDF handling, etc.)
-- Improved error handling, output formatting, and context management tailored for long research sessions
-
-This adaptation preserves the spirit and quality of the original work while making it a first-class citizen in the Hermes ecosystem.
-
----
-
-## Installation
-
-### 1. Clone the Repository
+#### Hermes Agent
 
 ```bash
 git clone https://github.com/yanyintingyou/academic-research-suite-hermes.git
+mkdir -p ~/.hermes/skills/research
+cp -r academic-research-suite-hermes/skills/research/academic-research-suite-hermes ~/.hermes/skills/research/
 ```
 
-### 2. Install into Hermes
+Restart Hermes or start a new session so the skill loader can discover it.
 
-Copy the skills into your Hermes skills directory:
+#### Claude Code
 
-```bash
-cp -r academic-research-suite-hermes/skills/* ~/.hermes/skills/
+Clone the repository into your project or skill collection. Claude Code will read `CLAUDE.md`, which points to the canonical `SKILL.md`.
+
+#### Codex / OpenAI agents
+
+Keep `AGENTS.md` at repository root. Codex-style agents should load `SKILL.md` as the authoritative instruction file.
+
+#### Cursor
+
+Open the repository or copy `.cursor/rules/academic-research-suite.mdc` into your project’s `.cursor/rules/` directory.
+
+### Usage examples
+
+```text
+Use this skill to design a literature review on FOMC communication and cross-border capital flows.
 ```
 
-Or if you use a skills tap / collection:
-
-```bash
-cp -r academic-research-suite-hermes/skills/academic-research-suite-hermes ~/.hermes/skills/
+```text
+Simulate a journal peer review for this manuscript and produce a revision roadmap.
 ```
 
-### 3. Restart Hermes
+```text
+Run an integrity audit: check whether each citation supports the adjacent claim.
+```
 
-Restart your Hermes Agent session (or reload skills). The suite will be automatically registered.
+### License and attribution
+
+This adaptation is distributed under the license specified in `LICENSE`. Please also review and respect the license of the original inspiration repository: [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills).
 
 ---
 
-## Project Structure
+## 中文
 
-```
+这是一个可移植的学术研究 Agent Skill，面向 Hermes Agent、Claude Code、Codex/OpenAI Agents、Cursor 以及其他通用 Agent 框架。它适用于文献综述、研究设计、论文写作、同行评议模拟、返修规划、引用核验与研究诚信审计。
+
+> 本仓库基于 [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills) 的思路进行 Hermes/通用 Agent 兼容化改造，并整理为常规单 Skill 仓库结构。
+
+### 本次结构修正
+
+- 新增根目录 `SKILL.md`，作为跨 Agent 框架的权威技能文件。
+- 新增 Hermes 标准路径：`skills/research/academic-research-suite-hermes/SKILL.md`。
+- 新增 Codex/OpenAI Agents、Claude Code、Cursor 兼容文件：
+  - `AGENTS.md`
+  - `CLAUDE.md`
+  - `.cursorrules`
+  - `.cursor/rules/academic-research-suite.mdc`
+- 删除/替换原 README 中“存在多个子 skill 目录”的不准确描述；当前仓库提供一个稳定、可复制、可直接安装的单 Skill。
+- 强化引用诚信规则，避免虚构文献、虚构 DOI、证据不足却强行下结论等问题。
+
+### 仓库结构
+
+```text
 academic-research-suite-hermes/
-├── LICENSE
+├── SKILL.md                                      # 跨 Agent 通用主技能文件
 ├── README.md
-├── .gitignore
+├── LICENSE
+├── AGENTS.md                                    # Codex / OpenAI Agent 指令
+├── CLAUDE.md                                    # Claude Code 指令
+├── .cursorrules                                 # Cursor 旧版规则
+├── .cursor/rules/academic-research-suite.mdc    # Cursor 新版规则
 └── skills/
-    └── academic-research-suite-hermes/          # Skill suite container
-        ├── SKILL.md
-        ├── literature_review/
-        ├── paper_writing/
-        ├── peer_review_simulation/
-        └── ... (additional sub-skills)
+    └── research/
+        └── academic-research-suite-hermes/
+            └── SKILL.md                         # Hermes 标准安装路径
 ```
 
-> **Note**: Individual skills are organized under `skills/academic-research-suite-hermes/`. Explore this directory to see all available capabilities.
+### 安装方式
 
----
+#### Hermes Agent
 
-## Usage Examples
+```bash
+git clone https://github.com/yanyintingyou/academic-research-suite-hermes.git
+mkdir -p ~/.hermes/skills/research
+cp -r academic-research-suite-hermes/skills/research/academic-research-suite-hermes ~/.hermes/skills/research/
+```
 
-Once loaded in Hermes, you can invoke the skills naturally:
+然后重启 Hermes 或开启新会话，让 skill loader 重新发现技能。
 
-- "帮我做一个这篇论文的文献综述"
-- "Simulate a peer review for this manuscript with 3 reviewers"
-- "Help me outline a paper on multimodal Fed communication analysis"
-- "Review the methodology section for potential weaknesses"
+#### Claude Code
 
-The skills are designed to be triggered by clear academic intent and will leverage Hermes' multi-model capabilities for best results.
+把本仓库克隆到项目目录或技能集合中即可。Claude Code 会读取 `CLAUDE.md`，该文件会指向根目录 `SKILL.md`。
 
----
+#### Codex / OpenAI Agents
 
-## Credits & Attribution
+保留根目录 `AGENTS.md`。Codex 风格 Agent 应把 `SKILL.md` 作为权威指令文件。
 
-**This is an adaptation project.**
+#### Cursor
 
-### Original Work
-- **Repository**: [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills)
-- **Author**: Imbad0202
+直接打开本仓库，或将 `.cursor/rules/academic-research-suite.mdc` 复制到你项目的 `.cursor/rules/` 目录。
 
-### Hermes Adaptation
-- **Adapted and maintained by**: yanyintingyou (Tingyou Li)
-- **Purpose**: Make the original skills fully compatible and easy to use inside the Hermes Agent framework
+### 使用示例
 
-All core prompts, research methodologies, and skill logic originate from the outstanding work of Imbad0202. This repository focuses on packaging, restructuring, Hermes-specific optimizations, and ongoing maintenance for the Hermes ecosystem.
+```text
+用这个 skill 帮我设计一个关于 FOMC 沟通与跨境资本流动的文献综述框架。
+```
 
-**We strongly encourage users to also star and support the original repository.**
+```text
+请模拟期刊同行评议，审查这篇论文并给出返修路线图。
+```
 
----
+```text
+做一次研究诚信审计：检查每个引用是否真的支撑相邻论断。
+```
 
-## License
+### 许可证与署名
 
-- **This repository** (structure, Hermes adaptations, and integration code): **MIT License**
-- **Original skill content**: Follows the license of [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills) (typically CC-BY-NC-4.0 or similar — please check the original repo)
-
----
-
-## Related Projects
-
-- Original academic research skills: https://github.com/Imbad0202/academic-research-skills
-- markitdown-auto-converter-agent-skill (companion document processing skill)
-- Other Hermes skills by yanyintingyou
-
----
-
-## Contributing
-
-Contributions, improvements, and additional academic skills are welcome! Please open an issue or pull request. When contributing new skills, try to follow the existing structure and include proper `SKILL.md` metadata.
-
----
-
-**Thank you to Imbad0202 for the original high-quality work that made this adaptation possible.**
+本改造版本遵循 `LICENSE` 中声明的许可证。请同时阅读并尊重原始灵感来源仓库 [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills) 的许可证要求。

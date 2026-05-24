@@ -1,0 +1,7 @@
+---
+description: Academic research, literature review, paper writing, peer review, and citation integrity skill.
+globs: ["**/*.md", "**/*.tex", "**/*.bib", "**/*.qmd"]
+alwaysApply: false
+---
+
+Load `SKILL.md` as the canonical instruction file when the user asks for academic research, literature review, manuscript drafting, peer-review simulation, revision planning, or citation/integrity audit. Do not fabricate citations or source metadata.
