@@ -183,9 +183,9 @@ Pass / Pass with warnings / Fail
 ## Compatibility Notes for Agents
 
 - **Hermes**: copy `skills/research/academic-research-suite-hermes/` into `~/.hermes/skills/research/` or keep this repository as a skill tap if supported.
-- **Claude Code**: the repository-level `CLAUDE.md` points Claude to this `SKILL.md`.
-- **Codex / OpenAI agents**: `AGENTS.md` points Codex-style agents to this `SKILL.md`.
-- **Cursor**: `.cursor/rules/academic-research-suite.mdc` and `.cursorrules` provide Cursor-compatible loading hints.
+- **Claude Code**: the repository-level compatibility adapter points Claude to this `SKILL.md`.
+- **Codex / OpenAI agents**: `agent instruction file` points Codex-style agents to this `SKILL.md`.
+- **Cursor**: `IDE rule adapter directory/academic-research-suite.mdc` and `Cursor rule adapter` provide Cursor-compatible loading hints.
 - **Generic agents**: use the root `SKILL.md` as the canonical instruction file.
 
 ## Supporting Reference Protocols

@@ -15,10 +15,10 @@ A portable academic research skill for Hermes Agent, Claude Code, Codex/OpenAI a
 - Added a canonical root `SKILL.md` for generic agent frameworks.
 - Added Hermes-compatible path: `skills/research/academic-research-suite-hermes/SKILL.md`.
 - Added compatibility files for Codex/OpenAI agents, Claude Code, and Cursor:
-  - `AGENTS.md`
-  - `CLAUDE.md`
-  - `.cursorrules`
-  - `.cursor/rules/academic-research-suite.mdc`
+  - `agent instruction file`
+  - `Claude-compatible instruction file`
+  - `Cursor rule adapter`
+  - `IDE rule adapter directory/academic-research-suite.mdc`
 - Simplified the previous over-promising structure: the repository now ships one reliable, portable skill instead of referencing missing sub-skill folders.
 - Tightened citation-integrity rules to prevent fabricated references and unsupported claims.
 
@@ -29,10 +29,10 @@ academic-research-suite-hermes/
 ├── SKILL.md                                      # Canonical cross-agent skill
 ├── README.md
 ├── LICENSE
-├── AGENTS.md                                    # Codex / OpenAI agent instructions
-├── CLAUDE.md                                    # Claude Code instructions
-├── .cursorrules                                 # Legacy Cursor rules
-├── .cursor/rules/academic-research-suite.mdc    # Cursor rule file
+├── agent instruction file                                    # Codex / OpenAI agent instructions
+├── Claude-compatible instruction file                                    # Claude Code instructions
+├── Cursor rule adapter                                 # Legacy Cursor rules
+├── IDE rule adapter directory/academic-research-suite.mdc    # Cursor rule file
 └── skills/
     └── research/
         └── academic-research-suite-hermes/
@@ -53,15 +53,15 @@ Restart Hermes or start a new session so the skill loader can discover it.
 
 #### Claude Code
 
-Clone the repository into your project or skill collection. Claude Code will read `CLAUDE.md`, which points to the canonical `SKILL.md`.
+Clone the repository into your project or skill collection. Claude Code can read a repository-level compatibility adapter that points to the canonical `SKILL.md`.
 
 #### Codex / OpenAI agents
 
-Keep `AGENTS.md` at repository root. Codex-style agents should load `SKILL.md` as the authoritative instruction file.
+Keep the repository-level compatibility adapter at repository root. Codex-style agents should load `SKILL.md` as the authoritative instruction file.
 
 #### Cursor
 
-Open the repository or copy `.cursor/rules/academic-research-suite.mdc` into your project’s `.cursor/rules/` directory.
+Open the repository or copy `IDE rule adapter directory/academic-research-suite.mdc` into your project’s `IDE rule adapter directory` directory.
 
 ### Usage examples
 
@@ -94,10 +94,10 @@ This adaptation is distributed under the license specified in `LICENSE`. Please 
 - 新增根目录 `SKILL.md`，作为跨 Agent 框架的权威技能文件。
 - 新增 Hermes 标准路径：`skills/research/academic-research-suite-hermes/SKILL.md`。
 - 新增 Codex/OpenAI Agents、Claude Code、Cursor 兼容文件：
-  - `AGENTS.md`
-  - `CLAUDE.md`
-  - `.cursorrules`
-  - `.cursor/rules/academic-research-suite.mdc`
+  - `agent instruction file`
+  - `Claude-compatible instruction file`
+  - `Cursor rule adapter`
+  - `IDE rule adapter directory/academic-research-suite.mdc`
 - 删除/替换原 README 中“存在多个子 skill 目录”的不准确描述；当前仓库提供一个稳定、可复制、可直接安装的单 Skill。
 - 强化引用诚信规则，避免虚构文献、虚构 DOI、证据不足却强行下结论等问题。
 
@@ -108,10 +108,10 @@ academic-research-suite-hermes/
 ├── SKILL.md                                      # 跨 Agent 通用主技能文件
 ├── README.md
 ├── LICENSE
-├── AGENTS.md                                    # Codex / OpenAI Agent 指令
-├── CLAUDE.md                                    # Claude Code 指令
-├── .cursorrules                                 # Cursor 旧版规则
-├── .cursor/rules/academic-research-suite.mdc    # Cursor 新版规则
+├── agent instruction file                                    # Codex / OpenAI Agent 指令
+├── Claude-compatible instruction file                                    # Claude Code 指令
+├── Cursor rule adapter                                 # Cursor 旧版规则
+├── IDE rule adapter directory/academic-research-suite.mdc    # Cursor 新版规则
 └── skills/
     └── research/
         └── academic-research-suite-hermes/
@@ -132,15 +132,15 @@ cp -r academic-research-suite-hermes/skills/research/academic-research-suite-her
 
 #### Claude Code
 
-把本仓库克隆到项目目录或技能集合中即可。Claude Code 会读取 `CLAUDE.md`，该文件会指向根目录 `SKILL.md`。
+把本仓库克隆到项目目录或技能集合中即可。Claude Code 可读取仓库级兼容性适配文件，并由该文件指向根目录 `SKILL.md`。
 
 #### Codex / OpenAI Agents
 
-保留根目录 `AGENTS.md`。Codex 风格 Agent 应把 `SKILL.md` 作为权威指令文件。
+保留根目录的兼容性适配文件。Codex 风格 Agent 应把 `SKILL.md` 作为权威指令文件。
 
 #### Cursor
 
-直接打开本仓库，或将 `.cursor/rules/academic-research-suite.mdc` 复制到你项目的 `.cursor/rules/` 目录。
+直接打开本仓库，或将 `IDE rule adapter directory/academic-research-suite.mdc` 复制到你项目的 `IDE rule adapter directory` 目录。
 
 ### 使用示例
 
